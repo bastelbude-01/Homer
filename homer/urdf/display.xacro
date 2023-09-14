@@ -9,18 +9,32 @@
             </geometry>
             <material name="black"/>
         </visual>
-        
+        <collision>
+            <origin xyz="0.0225 0.0 0.0" rpy="0.0 0.0 0.0"/>            
+            <geometry>
+                <box size="0.045 0.09 0.05"/>
+            </geometry>
+        </collision>
+        <xacro:box_inertia m="0.002" l="0.045" w="0.09" h="0.05"
+                           xyz="0.0225 0 0" rpy="0 0 0"/>    
     </link>
 
     <link name="in_display">
         <visual>
-            <origin xyz="0.045 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            
+            <origin xyz="0.045 0.0 0.0" rpy="0.0 0.0 0.0"/>            
             <geometry>
                 <box size="0.005 0.07 0.03"/>
             </geometry>
             <material name="green"/>
         </visual>
+        <collision>
+            <origin xyz="0.045 0.0 0.0" rpy="0.0 0.0 0.0"/>            
+            <geometry>
+                <box size="0.005 0.07 0.03"/>
+            </geometry>
+        </collision>
+        <xacro:box_inertia m="0.001" l="0.005" w="0.07" h="0.03"
+                           xyz="0.045 0 0" rpy="0 0 0"/>
     </link>
 
     <joint name="display_body_joint" type="fixed">
