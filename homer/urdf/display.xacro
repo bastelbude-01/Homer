@@ -18,6 +18,9 @@
         <xacro:box_inertia m="0.002" l="0.045" w="0.09" h="0.05"
                            xyz="0.0225 0 0" rpy="0 0 0"/>    
     </link>
+    <gazebo reference="display">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <link name="in_display">
         <visual>
@@ -36,6 +39,9 @@
         <xacro:box_inertia m="0.001" l="0.005" w="0.07" h="0.03"
                            xyz="0.045 0 0" rpy="0 0 0"/>
     </link>
+    <gazebo reference="in_display">
+        <material>Gazebo/Green</material>
+    </gazebo>
 
     <joint name="display_body_joint" type="fixed">
         <parent link="body"/>
