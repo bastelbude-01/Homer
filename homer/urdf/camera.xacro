@@ -1,4 +1,88 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
-    
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+    <link name="camera">
+        <visual>
+            <geometry>
+                <box size="0.03 0.03 0.03" />
+            </geometry>
+            <material name="white" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.03 0.03 0.03" />
+            </geometry>
+        </collision>
+        <xacro:box_inertia m="0.01" l="0.03" w="0.03" h="0.03"
+            xyz="0 0 0" rpy="0 0 0" />
+
+    </link>
+
+    <link name="camera_linse">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
+            <geometry>
+                <cylinder radius="0.01" length="0.05" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
+            <geometry>
+                <cylinder radius="0.01" length="0.05" />
+            </geometry>
+        </collision>
+        <xacro:cylinder_inertia m="0.005" r="0.01" h="0.05"
+            xyz="0 0 0" rpy="0 ${pi/2} 0" />
+
+    </link>
+
+    <link name="homer_cam" />
+
+    <joint name="cam_body_joint" type="fixed">
+        <parent link="body" />
+        <child link="camera" />
+        <origin xyz="0.1 0.0 0.06" rpy="0.0 0.0 0.0" />
+    </joint>
+
+    <joint name="linse_cam" type="fixed">
+        <parent link="camera" />
+        <child link="camera_linse" />
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    </joint>
+
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_linse" />
+        <child link="homer_cam" />
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    </joint>
+
+
+    <gazebo reference="camera">
+        <material>Gazebo/Orange</material>
+
+        <sensor name="camera" type="camera">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <camera>
+                <horizontal_fov>1.089</horizontal_fov>
+                <image>
+                    <format>R8G8B8</format>
+                    <width>640</width>
+                    <height>480</height>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>8.0</far>
+                </clip>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>homer_cam</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
 </robot>
