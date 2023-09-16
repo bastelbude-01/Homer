@@ -9,11 +9,11 @@
     </node>
  
     <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py" />
-<!--
+
     <node pkg="gazebo_ros" exec="spawn_entity.py"
           args="-topic robot_description -entity homer " />
 
- 
+<!--
     <include file="$(find-pkg-share leo)/launch/launch_spawner.launch.xml" />
 -->
 </launch>
