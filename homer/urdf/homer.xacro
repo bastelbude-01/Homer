@@ -82,6 +82,8 @@
         </link>
         <gazebo reference="${prefix}_wheel">
             <material>Gazebo/Blue</material>
+            <mu1 value="0.001"/>
+            <mu2 value="0.001"/>
         </gazebo>
     </xacro:macro>
 
@@ -112,6 +114,8 @@
         </link>
         <gazebo reference="caster_wheel_${prefix}">
             <material>Gazebo/Grey</material>
+            <mu1 value="0.001"/>
+            <mu2 value="0.001"/>
         </gazebo>
     </xacro:macro>
 
