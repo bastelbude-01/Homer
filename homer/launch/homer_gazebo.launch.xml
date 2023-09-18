@@ -5,15 +5,18 @@
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
-               value="$(command 'xacro $(var urdf_path)')" />
+            value="$(command 'xacro $(var urdf_path)')" />
     </node>
- 
+
     <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py" />
 
     <node pkg="gazebo_ros" exec="spawn_entity.py"
-          args="-topic robot_description -entity homer " />
+        args="-topic robot_description -entity homer -use_sim_time true" />
 
-<!--
-    <include file="$(find-pkg-share leo)/launch/launch_spawner.launch.xml" />
+    <include file="$(find-pkg-share homer)/launch/display.launch.xml" />
+
+
+    <!--
+    <include file="$(find-pkg-share homer)/launch/launch_spawner.launch.xml" />
 -->
 </launch>
