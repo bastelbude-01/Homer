@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="homer">
 
-    <xacro:include filename="material.xacro"/>
-    <xacro:include filename="homer.xacro"/>
-    <xacro:include filename="joints.xacro"/>
-
-    
-    <xacro:include filename="display.xacro"/>
-        
-    <xacro:include filename="camera.xacro"/>
-    <xacro:include filename="lidar.xacro"/> 
-    
-    <xacro:include filename="gazebo.xacro"/>  
-   <!-- <xacro:include filename="ros2_control.xacro"/> -->
+    <xacro:include filename="material.xacro" />
+    <xacro:include filename="homer.xacro" />
+    <xacro:include filename="joints.xacro" />
 
 
-    
-    
+    <xacro:include filename="display.xacro" />
+
+    <xacro:include filename="camera.xacro" />
+    <xacro:include filename="lidar.xacro" />
+
+   <!-- <xacro:include filename="gazebo.xacro"/>  -->
+
+    <xacro:include filename="ros2_control.xacro" /> 
+
 </robot>
