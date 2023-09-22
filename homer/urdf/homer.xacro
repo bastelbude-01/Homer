@@ -77,8 +77,8 @@
                     <sphere radius="${wheel_radius}"/>
                 </geometry>
             </collision>
-            <xacro:cylinder_inertia m="0.03" r="${wheel_radius}" h="${wheel_length}"
-                xyz="0 0 0" rpy="0.0 0.0 0.0" />
+            <xacro:sphere_inertia m="0.2" r="${wheel_radius}"
+                           xyz="0 0 0" rpy="0 0 0"/> 
         </link>
         <gazebo reference="${prefix}_wheel">
             <material>Gazebo/Blue</material>
