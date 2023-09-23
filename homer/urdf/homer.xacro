@@ -82,8 +82,8 @@
         </link>
         <gazebo reference="${prefix}_wheel">
             <material>Gazebo/Blue</material>
-            <mu1 value="0.001"/>
-            <mu2 value="0.001"/>
+            <mu1 value="0.01"/>
+            <mu2 value="0.01"/>
         </gazebo>
     </xacro:macro>
 
@@ -108,14 +108,14 @@
                     <sphere radius="${wheel_radius/2}" />
                 </geometry>
             </collision>
-            <xacro:sphere_inertia m="0.2" r="${wheel_radius/2}"
+            <xacro:sphere_inertia m="0.02" r="${wheel_radius/2}"
                            xyz="0 0 0" rpy="0 0 0"/>
 
         </link>
         <gazebo reference="caster_wheel_${prefix}">
             <material>Gazebo/Grey</material>
-            <mu1 value="0.001"/>
-            <mu2 value="0.001"/>
+            <mu1 value="0.01"/>
+            <mu2 value="0.01"/>
         </gazebo>
     </xacro:macro>
 
