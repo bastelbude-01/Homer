@@ -13,8 +13,8 @@
             <right_joint>joint_1</right_joint>
 
             <!-- kinematics -->
-            <wheel_separation>1.25</wheel_separation>
-            <wheel_diameter>0.6</wheel_diameter>
+            <wheel_separation>0.186</wheel_separation>
+            <wheel_diameter>0.7</wheel_diameter>
 
             <!-- limits -->
             <max_wheel_torque>20</max_wheel_torque>
