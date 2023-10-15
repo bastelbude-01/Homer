@@ -90,7 +90,7 @@ def generate_launch_description():
         #camera,
         #joystick,
         gazebo,
-        spawn_entity#,
-        #diff_drive_spawner,
-        #joint_broad_spawner
+        spawn_entity,
+        diff_drive_spawner,
+        joint_broad_spawner
     ])
