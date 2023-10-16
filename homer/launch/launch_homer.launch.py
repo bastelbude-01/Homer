@@ -89,7 +89,7 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
-        camera,
+        # camera,
         # joystick,
         # lidar,
         delayed_controller_manager,
