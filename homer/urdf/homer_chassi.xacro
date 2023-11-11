@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="scale" value="0.001 0.001 0.001" />
+    
+    <link name="base_footprint"/>
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${-PI/2}"/>            
+            <geometry>
+                <mesh filename="package://homer/meshes/BasePlateHorizontal.stl" scale="${scale}"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <joint name="virtual_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+    </joint>
+ 
+    
+    <link name="right_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${PI}"/>
+            <geometry>
+                <mesh filename="package://homer/meshes/wheel.dae" scale="0.5 0.5 0.5"/>
+            </geometry>
+        </visual>
+        
+    </link> 
+
+    <joint name="joint_1" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_wheel"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="0 -0.12 0.02" rpy="0 0 0"/>
+    </joint>
+
+    <link name="left_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://homer/meshes/wheel.dae" scale="0.5 0.5 0.5"/>
+            </geometry>
+        </visual>
+        
+    </link> 
+
+    <joint name="joint_2" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_wheel"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="0 0.12 0.02" rpy="0 0 0"/>
+    </joint>
+
+    <link name="caster_wheel_front">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.02"/>
+            </geometry>
+        </visual>
+    </link>
+    
+    <joint name="caster_wheel_front" type="fixed">
+        <parent link="base_link"/>
+        <child link="caster_wheel_front"/>
+        <origin xyz="0.07 0.0 -0.01" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="caster_wheel_rear">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.02"/>
+            </geometry>
+        </visual>
+    </link>
+    
+    <joint name="caster_wheel_rear" type="fixed">
+        <parent link="base_link"/>
+        <child link="caster_wheel_rear"/>
+        <origin xyz="-0.07 0.0 -0.01" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    
+
+</robot>
