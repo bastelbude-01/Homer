@@ -12,7 +12,14 @@
             </geometry>
             <material name="yellow" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/LowerCover-Part1.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_1"
@@ -33,7 +40,14 @@
             </geometry>
             <material name="yellow" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/LowerCover-Part2.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_2"
@@ -54,7 +68,14 @@
             </geometry>
             <material name="yellow" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/LowerCover-Part3.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_3"
@@ -75,7 +96,14 @@
             </geometry>
             <material name="yellow" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/LowerCover-Part4.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_4"
@@ -95,7 +123,15 @@
             </geometry>
             <material name="black" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${PI}" />
+            <geometry>
+                <mesh
+                    filename="package://homer/meshes/UpperCover-Face-Part1.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_5"
@@ -114,7 +150,14 @@
             </geometry>
             <material name="black" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/UpperCover-Part2.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_6"
@@ -135,7 +178,14 @@
             </geometry>
             <material name="yellow" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/UpperCover-Part3.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_7"
@@ -154,7 +204,14 @@
             </geometry>
             <material name="yellow" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://homer/meshes/UpperCover-Part4.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_8"
@@ -174,7 +231,15 @@
             </geometry>
             <material name="black" />
         </visual>
-
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${PI} 0.0" />
+            <geometry>
+                <mesh
+                    filename="package://homer/meshes/LidarTopPlate.stl"
+                    scale="${scale}" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="1"/>
     </link>
 
     <joint name="lower_body_top"

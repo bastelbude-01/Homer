@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="homer">
 
-    <xacro:include filename="material2.xacro" />   
+
+    <xacro:include filename="material.xacro" />  
 
     <xacro:include filename="homer_chassi.xacro"/>
-
     <xacro:include filename="homer_body.xacro"/>
 
 <!--
