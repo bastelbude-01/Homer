@@ -4,14 +4,16 @@
 
     <xacro:include filename="material.xacro" />  
 
-    <xacro:include filename="homer_chassi.xacro"/>
+    <xacro:include filename="homer_.xacro"/>
+    
+  <!--   <xacro:include filename="homer_chassi.xacro"/>
     <xacro:include filename="homer_body.xacro"/>
 
-<!--
+
     <xacro:include filename="display.xacro" />
 
-    <xacro:include filename="camera.xacro" /> -->
-    <xacro:include filename="lidar.xacro" />
+    <xacro:include filename="camera.xacro" /> 
+    <xacro:include filename="lidar.xacro" /> -->
 
  <!--    <xacro:include filename="gazebo.xacro"/>  -->
 

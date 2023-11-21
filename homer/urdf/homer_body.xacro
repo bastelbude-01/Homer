@@ -134,7 +134,7 @@
         <xacro:default_inertial mass="1"/>
     </link>
 
-    <joint name="lower_body_5"
+    <joint name="upper_body_5"
         type="fixed">
         <parent link="base_link" />
         <child link="body_5" />
@@ -160,7 +160,7 @@
         <xacro:default_inertial mass="1"/>
     </link>
 
-    <joint name="lower_body_6"
+    <joint name="upper_body_6"
         type="fixed">
         <parent link="base_link" />
         <child link="body_6" />
@@ -188,7 +188,7 @@
         <xacro:default_inertial mass="1"/>
     </link>
 
-    <joint name="lower_body_7"
+    <joint name="upper_body_7"
         type="fixed">
         <parent link="base_link" />
         <child link="body_7" />
@@ -214,7 +214,7 @@
         <xacro:default_inertial mass="1"/>
     </link>
 
-    <joint name="lower_body_8"
+    <joint name="upper_body_8"
         type="fixed">
         <parent link="base_link" />
         <child link="body_8" />
@@ -223,7 +223,7 @@
 
     <link name="body_top">
         <visual>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${PI} 0.0" />
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${PI} ${PI/2}" />
             <geometry>
                 <mesh
                     filename="package://homer/meshes/LidarTopPlate.stl"
@@ -232,7 +232,7 @@
             <material name="black" />
         </visual>
         <collision>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${PI} 0.0" />
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${PI} ${PI/2}" />
             <geometry>
                 <mesh
                     filename="package://homer/meshes/LidarTopPlate.stl"
@@ -242,7 +242,7 @@
         <xacro:default_inertial mass="1"/>
     </link>
 
-    <joint name="lower_body_top"
+    <joint name="body_top_joint"
         type="fixed">
         <parent link="base_link" />
         <child link="body_top" />

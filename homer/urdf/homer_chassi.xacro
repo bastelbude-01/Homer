@@ -19,7 +19,7 @@
                 <mesh filename="package://homer/meshes/BasePlateHorizontal.stl" scale="${scale}"/>
             </geometry>
         </collision>
-        <xacro:default_inertial mass="1"/>
+        <xacro:default_inertial mass="0.3"/>
     </link>
 
     <joint name="virtual_joint" type="fixed">
@@ -42,7 +42,8 @@
                 <sphere radius="0.033"/>
             </geometry>
         </collision>
-        <xacro:default_inertial mass="1"/>        
+        <xacro:sphere_inertia m="0.1" r="0.033"
+                           xyz="0 0 0" rpy="${PI/2} 0.0 0.0"/>        
     </link> 
 
     <joint name="joint_1" type="continuous">
@@ -65,7 +66,8 @@
                 <sphere radius="0.033"/>
             </geometry>
         </collision>
-        <xacro:default_inertial mass="1"/>        
+        <xacro:sphere_inertia m="0.1" r="0.033"
+                           xyz="0 0 0" rpy="${PI/2} 0.0 0.0"/>         
     </link> 
 
     <joint name="joint_2" type="continuous">
@@ -88,7 +90,8 @@
                 <sphere radius="0.02"/>
             </geometry>
         </collision>
-        <xacro:default_inertial mass="1"/>
+        <xacro:sphere_inertia m="0.01" r="0.02"
+                           xyz="0 0 0" rpy="0.0 0.0 0.0"/> 
     </link>
     
     <joint name="caster_wheel_front" type="fixed">
@@ -110,7 +113,8 @@
                 <sphere radius="0.02"/>
             </geometry>
         </collision>
-        <xacro:default_inertial mass="1"/>
+        <xacro:sphere_inertia m="0.01" r="0.02"
+                           xyz="0 0 0" rpy="0.0 0.0 0.0"/> 
     </link>
     
     <joint name="caster_wheel_rear" type="fixed">
