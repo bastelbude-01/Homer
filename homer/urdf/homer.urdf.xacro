@@ -1,22 +1,32 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="homer">
 
+  <xacro:arg name="use_ros2_control" default="false" />
 
-    <xacro:include filename="material.xacro" />  
 
-    <xacro:include filename="homer_.xacro"/>
-    
-  <!--   <xacro:include filename="homer_chassi.xacro"/>
+  <xacro:include filename="material.xacro" />
+
+  <xacro:include filename="homer_.xacro" />
+
+  <xacro:if value="$(arg use_ros2_control)">
+      <xacro:include filename="ros2_control.xacro" />
+  </xacro:if>
+  <xacro:unless value="$(arg use_ros2_control)">
+      <xacro:include filename="gazebo.xacro"/>
+  </xacro:unless>
+
+  <!--    Stl Files, laden nicht in Gazebo :( 
+    <xacro:include filename="homer_chassi.xacro"/>
     <xacro:include filename="homer_body.xacro"/>
 
 
     <xacro:include filename="display.xacro" />
 
     <xacro:include filename="camera.xacro" /> 
+
+    Lidar neu ausrichten aber Body verkleinern um an die stl datei angepasst zu sein
     <xacro:include filename="lidar.xacro" /> -->
 
- <!--    <xacro:include filename="gazebo.xacro"/>  -->
 
-    <xacro:include filename="ros2_control.xacro" /> 
 
 </robot>
