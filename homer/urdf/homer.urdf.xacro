@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="homer">
 
-  <xacro:arg name="use_ros2_control" default="false" />
+  <xacro:arg name="use_ros2_control" default="true" />
+  <xacro:arg name="sim_mode" default="false" />
 
 
   <xacro:include filename="material.xacro" />
 
   <xacro:include filename="homer_.xacro" />
 
+
   <xacro:if value="$(arg use_ros2_control)">
       <xacro:include filename="ros2_control.xacro" />
   </xacro:if>
   <xacro:unless value="$(arg use_ros2_control)">
       <xacro:include filename="gazebo.xacro"/>
-  </xacro:unless>
+  </xacro:unless> 
+
 
   <!--    Stl Files, laden nicht in Gazebo :( 
     <xacro:include filename="homer_chassi.xacro"/>
