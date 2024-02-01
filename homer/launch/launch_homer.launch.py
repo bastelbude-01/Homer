@@ -84,14 +84,20 @@ def generate_launch_description():
         )
     )
 
+    engine = Node(
+        package="l298n",
+        executable="l298n",
+    )
+
 
 
     # Launch them all!
     return LaunchDescription([
         rsp,
-        # camera,
+        camera,
         # joystick,
         # lidar,
+        engine,
         delayed_controller_manager,
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner

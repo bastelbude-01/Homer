@@ -23,6 +23,6 @@ def generate_launch_description():
 
     return LaunchDescription([
 
-    BW        
+    color
         
     ])
