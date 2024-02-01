@@ -49,7 +49,7 @@ def generate_launch_description():
         # ),
 
         joystick,
-        teleop_node1,
-        rviz2
+        teleop_node1
+        #rviz2
         
     ])
