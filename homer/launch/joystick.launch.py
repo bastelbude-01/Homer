@@ -25,7 +25,7 @@ def generate_launch_description():
             executable='teleop_node',
             name='teleop_node1',
             parameters=[joy_params1],
-            remappings=[("/cmd_vel", "/leo_driver/cmd_vel_unstamped")]
+            remappings=[("/cmd_vel", "/homer_driver/cmd_vel_unstamped")]
         )
 
 
